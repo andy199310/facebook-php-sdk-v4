@@ -183,13 +183,7 @@ class FacebookRedirectLoginHelper
    */
   protected function storeState($state)
   {
-    if ($this->checkForSessionStatus === true
-      && session_status() !== PHP_SESSION_ACTIVE) {
-      throw new FacebookSDKException(
-        'Session not active, could not store state.', 720
-      );
-    }
-    $_SESSION[$this->sessionPrefix . 'state'] = $state;
+    Session::put('state', $state);
   }
 
   /**
@@ -203,17 +197,7 @@ class FacebookRedirectLoginHelper
    */
   protected function loadState()
   {
-    if ($this->checkForSessionStatus === true
-      && session_status() !== PHP_SESSION_ACTIVE) {
-      throw new FacebookSDKException(
-        'Session not active, could not load state.', 721
-      );
-    }
-    if (isset($_SESSION[$this->sessionPrefix . 'state'])) {
-      $this->state = $_SESSION[$this->sessionPrefix . 'state'];
-      return $this->state;
-    }
-    return null;
+    return $this->state = Session::get('state');
   }
 
   /**
