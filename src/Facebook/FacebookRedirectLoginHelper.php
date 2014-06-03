@@ -183,7 +183,7 @@ class FacebookRedirectLoginHelper
    */
   protected function storeState($state)
   {
-    Session::put('state', $state);
+    \Illuminate\Support\Facades\Session::put('state', $state);
   }
 
   /**
@@ -197,7 +197,7 @@ class FacebookRedirectLoginHelper
    */
   protected function loadState()
   {
-    return $this->state = Session::get('state');
+    return $this->state = \Illuminate\Support\Facades\Session::get('state');
   }
 
   /**
