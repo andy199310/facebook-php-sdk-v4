@@ -1,6 +1,9 @@
 Facebook SDK for PHP
 ====================
 
+This is make facebook-sdk-v4 work better in laravel.
+WIP!!
+
 [![Latest Stable Version](http://img.shields.io/packagist/v/facebook/php-sdk-v4.svg)](https://packagist.org/packages/facebook/php-sdk-v4)
 
 
